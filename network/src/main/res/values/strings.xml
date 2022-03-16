@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NetWork</string>
+    <string name="java">java</string>
+    <string name="kotlin">kotlin</string>
+    <string name="okhttp">OkHttp</string>
+    <string name="retrofit">Retrofit</string>
+</resources>
