@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="text_input_layout">TextInputLayout</string>
+    <string name="et_hint">输入用户名</string>
+</resources>

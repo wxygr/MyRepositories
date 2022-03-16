@@ -5,6 +5,8 @@
       <map>
         <entry key="customview/src/main/res/layout/activity_main.xml" value="0.49322916666666666" />
         <entry key="customview/src/main/res/layout/activity_main_java.xml" value="0.5072916666666667" />
+        <entry key="materialdesign/src/main/res/layout/activity_main.xml" value="0.43385416666666665" />
+        <entry key="materialdesign/src/main/res/layout/activity_start.xml" value="0.43697916666666664" />
         <entry key="network/src/main/res/layout/activity_main_java.xml" value="0.42083333333333334" />
         <entry key="network/src/main/res/layout/activity_splash.xml" value="0.42083333333333334" />
       </map>
