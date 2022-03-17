@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRepositories">
         <activity
+            android:name=".NavigationViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MyRepositories.NoActionBar" />
+        <activity
             android:name=".StartActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +24,7 @@
         </activity>
         <activity
             android:name=".TextInputLayoutActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

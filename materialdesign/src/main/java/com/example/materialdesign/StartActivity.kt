@@ -16,5 +16,8 @@ class StartActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btn_text_input_layout).setOnClickListener{
             startActivity(Intent(this, TextInputLayoutActivity::class.java))
         }
+        findViewById<Button>(R.id.btn_navigation_view).setOnClickListener{
+            startActivity(Intent(this, NavigationViewActivity::class.java))
+        }
     }
 }

@@ -13,6 +13,14 @@
         android:layout_height="wrap_content"
         android:text="@string/text_input_layout"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"/>
-
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_navigation_view"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"/>
 </LinearLayout>
