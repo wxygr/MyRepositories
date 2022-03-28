@@ -78,7 +78,6 @@ class RenameFileJob(private val path: Path, private val newName: String) : FileJ
 //------------------------------------------------------------rename end------------------------------------------------------------------------------
 
 
-
 //------------------------------------------------------------copy ------------------------------------------------------------------------------
 //class CopyFileJob(private val sources: List<Path>, private val targetDirectory: Path) : FileJob() {
 //    @Throws(IOException::class)

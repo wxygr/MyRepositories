@@ -59,6 +59,7 @@ class FileJobService : Service() {
             }
         }
     }
+
     companion object {
         private var instance: FileJobService? = null
 
@@ -94,8 +95,6 @@ class FileJobService : Service() {
 //        fun copy(sources: List<Path>, targetDirectory: Path, context: Context) {
 //            startJob(CopyFileJob(sources, targetDirectory), context)
 //        }
-
-
 
 
         @MainThread

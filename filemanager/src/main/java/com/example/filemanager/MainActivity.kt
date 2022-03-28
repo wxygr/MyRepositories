@@ -103,8 +103,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun copyFileUseOkio(source: Path, target: Path) {
         try {
             nioFileSystem.copy(source, target) //只能对文件进行复制操作，包含隐藏文件
@@ -113,8 +111,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "copy failed", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 
 
     private fun handlePermission() {
@@ -126,6 +122,7 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
     /**
      * 复制文件
      *
@@ -182,34 +179,31 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-
-
     /**
      * 获取源文件下所有文件的绝对路径,存放在list中
      * @param file 源文件
      * @return 返回值代表源文件下所有文件的绝对路径
      */
-    private fun getAllFilePath(file: File): List<File>{
-        val lists= ArrayList<File>()
+    private fun getAllFilePath(file: File): List<File> {
+        val lists = ArrayList<File>()
         if (!file.exists()) {
             return lists
         }
-        if(file.isDirectory){//如果文件是目录
-            val files=file.listFiles()//把目录下所有目录和文件存在数组中
-            if(files != null){//该目录非空
+        if (file.isDirectory) {//如果文件是目录
+            val files = file.listFiles()//把目录下所有目录和文件存在数组中
+            if (files != null) {//该目录非空
                 for (f in files) {//遍历数组内所有对象
-                    if(f.isDirectory){//如果还是目录
-                        val element=getAllFilePath(f)//调用自身方法循环
+                    if (f.isDirectory) {//如果还是目录
+                        val element = getAllFilePath(f)//调用自身方法循环
                         lists.addAll(element)//将每一个子目录文件夹添加到list集合中
-                    }else{//如果遍历出来是文件
+                    } else {//如果遍历出来是文件
                         lists.add(f)//将文件路径存入list集合
                     }
                 }
-            }else{//如果目录为空
+            } else {//如果目录为空
                 lists.add(file)//将空目录路径添加到list集合
             }
-        }else{//如果传进来的file对象是文件
+        } else {//如果传进来的file对象是文件
             lists.add(file)//将文件路径添加到list集合
         }
         return lists
@@ -274,9 +268,6 @@ class MainActivity : AppCompatActivity() {
             false
         }
     }
-
-
-
 
 
     /**
