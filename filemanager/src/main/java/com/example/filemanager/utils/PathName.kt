@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
- * All Rights Reserved.
- */
-
 package com.example.filemanager.utils
 
 @JvmInline
@@ -36,11 +31,11 @@ private val String.isValidPathName: Boolean
     get() = isNotEmpty() && !contains('\u0000')
 
 @JvmInline
-value class FileName(val value: String) {
-    val singleExtension: String
+value class FileName(private val value: String) {
+    private val singleExtension: String
         get() = value.substringAfterLast(EXTENSION_SEPARATOR, "")
 
-    val extensions: String
+    private val extensions: String
         get() {
             val lastExtension = singleExtension
             if (DOUBLE_EXTENSIONS.any { lastExtension.equals(it, true) }) {

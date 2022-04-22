@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2019 Hai Zhang <dreaming.in.code.zh@gmail.com>
- * All Rights Reserved.
- */
-
 package com.example.filemanager.operation
 
 import com.example.filemanager.utils.showToast
@@ -13,8 +8,7 @@ import java.util.Random
 abstract class FileJob {
     val id = Random().nextInt()
 
-    internal lateinit var service: FileJobService
-        private set
+    private lateinit var service: FileJobService
 
     fun runOn(service: FileJobService) {
         this.service = service
