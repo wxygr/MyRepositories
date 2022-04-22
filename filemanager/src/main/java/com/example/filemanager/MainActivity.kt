@@ -17,7 +17,7 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
     private val path1Str = Environment.getExternalStorageDirectory().toString() + "/temp1"
     private val path2Str = Environment.getExternalStorageDirectory().toString() + "/temp2"
-    private val nioFileSystem = FileSystem.SYSTEM
+    private val fileSystem = FileSystem.SYSTEM
     private val path1 = path1Str.toPath()
     private val path2 = path2Str.toPath()
     private val TAG = "wxy"
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
 
         // 遍历temp1中的文件。复制到temp2，如果temp1中存在文件夹，则会抛出异常
         findViewById<Button>(R.id.btn_copy).setOnClickListener {
-            if (nioFileSystem.exists(path1)) {
-                val listPaths = nioFileSystem.list(path1)
+            if (fileSystem.exists(path1)) {
+                val listPaths = fileSystem.list(path1)
                 for (path in listPaths) {
                     copyFileUseOkio(path, "path2Str+\"/\"+path.name".toPath())
                 }
@@ -67,16 +67,16 @@ class MainActivity : AppCompatActivity() {
 
         // 移动temp1文件夹到temp2文件夹
         findViewById<Button>(R.id.btn_move).setOnClickListener {
-            nioFileSystem.atomicMove(path1, (path2Str + "/" + path1.name).toPath())
+            fileSystem.atomicMove(path1, (path2Str + "/" + path1.name).toPath())
         }
 
 
         findViewById<Button>(R.id.btn_list).setOnClickListener {
-            val list = nioFileSystem.list(path1) // 包含隐藏的文件夹/文件
+            val list = fileSystem.list(path1) // 包含隐藏的文件夹/文件
             for (path in list) {
                 Log.i(TAG, "list: $path")
             }
-            val listRecursively = nioFileSystem.listRecursively(path2) //递归遍历
+            val listRecursively = fileSystem.listRecursively(path2) //递归遍历
             for (path in listRecursively) {
                 Log.i(TAG, "listRecursively: $path")
             }
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun copyFileUseOkio(source: Path, target: Path) {
         try {
-            nioFileSystem.copy(source, target) //只能对文件进行复制操作，包含隐藏文件
+            fileSystem.copy(source, target) //只能对文件进行复制操作，包含隐藏文件
         } catch (e: IOException) {
             e.printStackTrace()
             Toast.makeText(this, "copy failed", Toast.LENGTH_SHORT).show()
